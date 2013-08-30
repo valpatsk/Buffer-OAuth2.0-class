@@ -32,9 +32,9 @@ $redirect_url="...";
 $code = isset($_REQUEST['code'])?$_REQUEST['code']:'';
 $BO = new BufferInOAuth2();
 //you can put code as argument or it will be taken from $_REQUEST
-$access_token = $BO>getAccessToken($client_id,$client_secret,$redirect_url,$code);
+$access_token = $BO->getAccessToken($client_id,$client_secret,$redirect_url,$code);
 //you can already use $BO object
-$BO=getUser();
+$user = $BO->getUser();
 //How to use futher with existing access_token:
 $BO = new BufferInOAuth2($access_token);
 </pre>
@@ -48,7 +48,7 @@ getUser();
 postMessage();
 </pre>
 
-4. How to pos message
+4. How to post messages
 <pre>
 $content=array();
 /*
