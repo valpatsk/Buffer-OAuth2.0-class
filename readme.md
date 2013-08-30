@@ -18,7 +18,7 @@ $client_secret = "...";
 $redirect_url="...";
 $BO = new BufferInOAuth2();
 $connect_link = $BO>getAuthorizeUrl($client_id,$redirect_url);
-//show link or just redirect
+//show link or just redirect  
 </pre>
 
 
