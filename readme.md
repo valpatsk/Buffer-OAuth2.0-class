@@ -10,7 +10,7 @@ HOW TO USE:
 
 1. Redirect user to Auth screen:
 <pre>
-require_once("lib/classes/Buffer.OAuth2.class.php");
+require_once("Buffer.OAuth2.class.php");
 //Create Buffer app to get keys
 $client_id = "...";
 $client_secret = "...";
@@ -24,7 +24,7 @@ $connect_link = $BO>getAuthorizeUrl($client_id,$redirect_url);
 
 2. Get Access Token
 <pre>
-require_once("lib/classes/Buffer.OAuth2.class.php");
+require_once("Buffer.OAuth2.class.php");
 $client_id = "...";
 $client_secret = "...";
 //put here your redirect url
@@ -33,7 +33,7 @@ $code = isset($_REQUEST['code'])?$_REQUEST['code']:'';
 $BO = new BufferInOAuth2();
 //you can put code as argument or it will be taken from $_REQUEST
 $access_token = $BO>getAccessToken($client_id,$client_secret,$redirect_url,$code);
-//you can already use $LIOAuth object
+//you can already use $BO object
 $BO=getUser();
 //How to use futher with existing access_token:
 $BO = new BufferInOAuth2($access_token);
