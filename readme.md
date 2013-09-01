@@ -9,7 +9,7 @@ Very short necessary list of functions for me to interact with Buffer through OA
 HOW TO USE:
 
 1. Redirect user to Auth screen:
-<pre>
+```php
 require_once("Buffer.OAuth2.class.php");
 //Create Buffer app to get keys
 $client_id = "...";
@@ -19,11 +19,11 @@ $redirect_url="...";
 $BO = new BufferInOAuth2();
 $connect_link = $BO>getAuthorizeUrl($client_id,$redirect_url);
 //show link or just redirect  
-</pre>
+```
 
 
 2. Get Access Token
-<pre>
+```php
 require_once("Buffer.OAuth2.class.php");
 $client_id = "...";
 $client_secret = "...";
@@ -37,19 +37,19 @@ $access_token = $BO->getAccessToken($client_id,$client_secret,$redirect_url,$cod
 $user = $BO->getUser();
 //How to use futher with existing access_token:
 $BO = new BufferInOAuth2($access_token);
-</pre>
+```
 
 
 3. List of possible methods
-<pre>
+```php
 checkConnection();
 getProfiles();
 getUser();
 postMessage();
-</pre>
+```
 
 4. How to post messages
-<pre>
+```php
 $content=array();
 /*
 $content['text']='...';
@@ -66,4 +66,4 @@ $content['media']['link']'...';
 $BO = new BufferInOAuth2($access_token);
 $result = $BO->postMessage($content);
 //check for result info in $result array.
-</pre>
+```
